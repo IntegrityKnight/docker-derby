@@ -39,9 +39,6 @@ VOLUME ["/Database"]
 # Usage of "ENV" ref to "https://docs.docker.com/engine/reference/builder/#expose"
 EXPOSE 1527
 
-# Usage of "HEALTHCHECK" ref to "https://docs.docker.com/engine/reference/builder/#healthcheck"
-HEALTHCHECK CMD nc -z localhost 1527 || exit 1
-
 # Usage of "CMD" ref to "https://docs.docker.com/engine/reference/builder/#cmd"
 # See reference "https://db.apache.org/derby/docs/10.14/adminguide/tadmincbdjhhfd.html"
 CMD ["java", "org.apache.derby.drda.NetworkServerControl", "start", "-h", "0.0.0.0"]
